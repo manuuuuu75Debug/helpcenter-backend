@@ -1,0 +1,247 @@
+/* ===== ADMIN & TECNICO PANEL ===== */
+
+#menu {
+    background: rgba(15,22,36,0.6);
+    border-bottom: 1px solid var(--border);
+    padding: 0 32px;
+    display: flex;
+    gap: 4px;
+    height: 52px;
+    align-items: center;
+}
+
+#menu button {
+    background: transparent;
+    color: var(--text-muted);
+    border: none;
+    padding: 8px 18px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    transition: all 0.2s;
+    position: relative;
+}
+
+#menu button:hover {
+    background: var(--surface2);
+    color: var(--text);
+}
+
+#menu button.active {
+    background: var(--surface2);
+    color: var(--accent2);
+    border: 1px solid var(--border);
+}
+
+/* ===== CONTENIDO ===== */
+#contenido {
+    max-width: 1200px;
+    margin: 32px auto;
+    padding: 0 24px;
+    animation: fadeUp 0.3s ease;
+}
+
+#contenido h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--text);
+}
+
+/* ===== COLUMNAS KANBAN ===== */
+.columnas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.columna {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    min-height: 200px;
+}
+
+.columna:hover {
+    border-color: rgba(59,130,246,0.2);
+}
+
+.estado-titulo {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.estado-titulo.abierto    { background: rgba(16,185,129,0.12); color: #34d399; border: 1px solid rgba(16,185,129,0.2); }
+.estado-titulo.en_proceso { background: rgba(245,158,11,0.12); color: #fbbf24; border: 1px solid rgba(245,158,11,0.2); }
+.estado-titulo.resuelto   { background: rgba(59,130,246,0.12); color: #60a5fa; border: 1px solid rgba(59,130,246,0.2); }
+.estado-titulo.cerrado    { background: rgba(100,116,139,0.12); color: #94a3b8; border: 1px solid rgba(100,116,139,0.2); }
+
+/* ===== CARDS TICKET ===== */
+.card-ticket {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    transition: all 0.2s;
+    cursor: default;
+}
+
+.card-ticket:hover {
+    border-color: rgba(59,130,246,0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.card-ticket strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.card-ticket p {
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.card-ticket select {
+    width: 100%;
+    font-size: 12px;
+    padding: 7px 10px;
+    background: var(--surface3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-dim);
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.card-ticket select:focus {
+    border-color: var(--accent);
+}
+
+.card-ticket select option {
+    background: var(--surface2);
+    color: var(--text);
+}
+
+/* ===== TABLA ADMIN ===== */
+#tickets-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+#tickets-table thead {
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+}
+
+#tickets-table th {
+    padding: 13px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+}
+
+#tickets-table td {
+    padding: 13px 16px;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(30,45,69,0.6);
+    color: var(--text-dim);
+}
+
+#tickets-table tbody tr:last-child td { border-bottom: none; }
+#tickets-table tbody tr { transition: background 0.15s; }
+#tickets-table tbody tr:hover { background: rgba(59,130,246,0.04); }
+
+#tickets-table select {
+    padding: 6px 10px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-dim);
+    font-size: 12px;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    outline: none;
+}
+
+#tickets-table select option { background: var(--surface2); }
+
+/* ===== STATS CARDS (opcional) ===== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    transition: border-color 0.2s;
+}
+
+.stat-card:hover { border-color: rgba(59,130,246,0.3); }
+
+.stat-card .stat-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.stat-card .stat-value {
+    font-family: 'Syne', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1;
+}
+
+.stat-card .stat-sub {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .columnas { grid-template-columns: 1fr 1fr; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 560px) {
+    #menu { padding: 0 12px; gap: 2px; }
+    #menu button { padding: 6px 12px; font-size: 13px; }
+    #contenido { padding: 0 12px; margin: 20px auto; }
+    .columnas { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+}

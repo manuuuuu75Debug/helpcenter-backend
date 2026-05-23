@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soporte Interno - HR HelpDesk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Soporte Core - HR HelpDesk</h1>
+    <div id="user-info"></div>
+    <button id="btn-logout" style="display:none;">Cerrar Sesión</button>
+  </header>
+
+  <div id="login-section">
+    <h2>Iniciar Sesión</h2>
+    <input type="email" id="email" placeholder="Correo electrónico" required>
+    <input type="password" id="password" placeholder="Contraseña" required>
+    <button id="btn-login">Ingresar</button>
+  </div>
+
+  <!-- Panel de inicio -->
+  <div id="main-section" style="display:none;">
+    <h2>Mis Solicitudes</h2>
+    <button id="btn-nueva-solicitud">Nueva Solicitud</button>
+
+    <table id="tickets-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Título</th>
+          <th>Categoría</th>
+          <th>Prioridad</th>
+          <th>Estado</th>
+          <th>Fecha</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- creacion de solicitud -->
+  <div id="modal-crear" style="display:none;">
+    <h3>Nueva Solicitud</h3>
+    <input type="text" id="titulo" placeholder="Título de la solicitud" required>
+    <textarea id="descripcion" placeholder="Descripción detallada" required></textarea>
+    <select id="categoria">
+      <option value="">Selecciona categoría</option>
+      <option value="Vacaciones">Vacaciones</option>
+      <option value="Constancia Laboral">Constancia Laboral</option>
+      <option value="Queja Interna">Queja Interna</option>
+      <option value="Permiso Especial">Permiso Especial</option>
+      <option value="Reporte de Problema">Reporte de Problema</option>
+    </select>
+    <select id="prioridad">
+      <option value="media">Media</option>
+      <option value="alta">Alta</option>
+      <option value="baja">Baja</option>
+    </select>
+    <button id="btn-crear-solicitud">Crear Solicitud</button>
+    <button id="btn-cancelar">Cancelar</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

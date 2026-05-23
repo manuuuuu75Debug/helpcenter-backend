@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Administrativo - HelpDesk</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <header>
+    <h1>Panel Administrativo</h1>
+    <div id="user-info"></div>
+    <button id="btn-logout">Cerrar Sesión</button>
+  </header>
+
+  <nav id="menu">
+    <button onclick="cargarDashboard()"> Dashboard</button>  
+    <button onclick="cargarTickets()"> Tickets</button>
+    <button onclick="cargarUsuarios()"> Usuarios</button>
+  </nav>
+
+  <div id="contenido"></div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
