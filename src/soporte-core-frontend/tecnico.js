@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000';
+const API_URL = 'helpcenter-backend-production.up.railway.app';
 const token = localStorage.getItem('token');
 
 if (!token) window.location.href = '/';
