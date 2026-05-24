@@ -13,6 +13,9 @@ const getTickets = (req, res) => {
     const offset = (page - 1) * limit;
     const { id, rol } = req.user;
 
+    const { id, rol } = req.user;
+console.log('👤 Usuario:', id, rol); // 👈 agrega esto
+
     let query = `SELECT * FROM tickets`;
     let countQuery = `SELECT COUNT(*) as total FROM tickets`;
     let params = [];
