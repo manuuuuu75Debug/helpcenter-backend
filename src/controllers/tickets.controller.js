@@ -11,26 +11,30 @@ const prioridadesValidas = ['baja', 'media', 'alta'];
 const getTickets = (req, res) => {
     const { page = 1, limit = 10, estado, categoria } = req.query;
     const offset = (page - 1) * limit;
-    const { id, rol } = req.user; // viene del token JWT
+    const { id, rol } = req.user;
 
     let query = `SELECT * FROM tickets`;
     let countQuery = `SELECT COUNT(*) as total FROM tickets`;
     let params = [];
+    let countParams = [];
     const conditions = [];
 
-    // Si es usuario normal, solo ve sus propios tickets
     if (rol === 'usuario') {
         conditions.push('usuario_id = ?');
         params.push(id);
+        countParams.push(id);
     }
 
     if (estado) {
         conditions.push('estado = ?');
         params.push(estado);
+        countParams.push(estado);
     }
+
     if (categoria) {
         conditions.push('categoria = ?');
         params.push(categoria);
+        countParams.push(categoria);
     }
 
     if (conditions.length > 0) {
@@ -45,7 +49,7 @@ const getTickets = (req, res) => {
     db.query(query, params, (err, results) => {
         if (err) return res.status(500).json({ error: 'Error al obtener solicitudes' });
 
-        db.query(countQuery, params.slice(0, -2), (err, countResult) => {
+        db.query(countQuery, countParams, (err, countResult) => {
             if (err) return res.status(500).json({ error: 'Error al contar registros' });
 
             res.json({
