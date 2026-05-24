@@ -11,7 +11,6 @@ const prioridadesValidas = ['baja', 'media', 'alta'];
 const getTickets = (req, res) => {
     const { page = 1, limit = 10, estado, categoria } = req.query;
     const offset = (page - 1) * limit;
-    const { id, rol } = req.user;
 
     const { id, rol } = req.user;
 console.log('👤 Usuario:', id, rol); // 👈 agrega esto
