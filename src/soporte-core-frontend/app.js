@@ -1,4 +1,4 @@
-const API_URL = 'helpcenter-backend-production.up.railway.app';
+const API_URL = window.location.origin;
 let token = localStorage.getItem('token');
 
 const loginSection = document.getElementById('login-section');
