@@ -10,8 +10,8 @@ const { getTickets, createTicket, updateTicket, deleteTicket } = require('../con
 
 // ==================== RUTAS PROTEGIDAS ====================
 
-// Solo Técnico y Admin pueden ver todas las solicitudes
-router.get('/', authMiddleware, roleMiddleware('tecnico', 'admin'), getTickets);
+// ver todas las solicitudes
+router.get('/', authMiddleware, roleMiddleware('usuario', 'tecnico', 'admin'), getTickets);
 
 // Solo Usuario y Admin pueden crear solicitudes
 router.post('/', authMiddleware, roleMiddleware('usuario', 'admin'), createTicket);

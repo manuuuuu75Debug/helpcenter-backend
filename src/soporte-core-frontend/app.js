@@ -91,7 +91,7 @@ btnLogin.addEventListener('click', async () => {
             // Usuario normal se queda aquí
             loginSection.style.display = 'none';
             mainSection.style.display = 'block';
-            userInfo.textContent = `👤 ${data.user.nombre} (${data.user.rol})`;
+            userInfo.textContent = ` ${data.user.nombre} (${data.user.rol})`;
             btnLogout.style.display = 'inline-block';
             cargarTickets();
 
