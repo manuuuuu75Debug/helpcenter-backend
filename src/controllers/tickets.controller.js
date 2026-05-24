@@ -3,14 +3,7 @@
 const db = require('../config/db');
 
 // Lista de categorías y prioridades permitidas
-const categoriasValidas = [
-    'Vacaciones', 
-    'Constancia Laboral', 
-    'Queja Interna', 
-    'Permiso Especial', 
-    'Reporte de Problema', 
-    'Otra'
-];
+const categoriasValidas = ['constancia', 'vacaciones', 'permiso', 'nomina', 'baja', 'alta','quejas','reporte','cambios','prestacaja','otro'];
 
 const prioridadesValidas = ['baja', 'media', 'alta'];
 
