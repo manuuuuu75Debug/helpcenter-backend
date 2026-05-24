@@ -41,26 +41,28 @@
   </div>
 
   <!-- creacion de solicitud -->
-  <div id="modal-crear" style="display:none;">
-    <h3>Nueva Solicitud</h3>
-    <input type="text" id="titulo" placeholder="Título de la solicitud" required>
-    <textarea id="descripcion" placeholder="Descripción detallada" required></textarea>
-    <select id="categoria">
-      <option value="">Selecciona categoría</option>
-      <option value="Vacaciones">Vacaciones</option>
-      <option value="Constancia Laboral">Constancia Laboral</option>
-      <option value="Queja Interna">Queja Interna</option>
-      <option value="Permiso Especial">Permiso Especial</option>
-      <option value="Reporte de Problema">Reporte de Problema</option>
-    </select>
-    <select id="prioridad">
-      <option value="media">Media</option>
-      <option value="alta">Alta</option>
-      <option value="baja">Baja</option>
-    </select>
-    <button id="btn-crear-solicitud">Crear Solicitud</button>
-    <button id="btn-cancelar">Cancelar</button>
-  </div>
+  <div id="modal-crear">
+    <div class="modal-box">
+        <h3>Nueva Solicitud</h3>
+        <input type="text" id="titulo" placeholder="Título de la solicitud">
+        <textarea id="descripcion" placeholder="Descripción detallada"></textarea>
+        <select id="categoria">
+            <option value="">Selecciona categoría</option>
+            <option value="hardware">Hardware</option>
+            <option value="software">Software</option>
+            <option value="red">Red</option>
+            <option value="accesos">Accesos</option>
+            <option value="otro">Otro</option>
+        </select>
+        <select id="prioridad">
+            <option value="baja">Baja</option>
+            <option value="media">Media</option>
+            <option value="alta">Alta</option>
+        </select>
+        <button id="btn-crear-solicitud">Crear Solicitud</button>
+        <button id="btn-cancelar">Cancelar</button>
+    </div>
+</div>
 
   <script src="app.js"></script>
 </body>
